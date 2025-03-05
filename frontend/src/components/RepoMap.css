@@ -1,0 +1,593 @@
+/* RepoMap.css - Styling for the repository map component */
+
+.repo-map-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #0f172a; /* dark blue */
+  color: #e2e8f0; /* light gray */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header Styling */
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #1e293b; /* slightly lighter blue */
+  border-bottom: 1px solid #334155; /* border */
+}
+
+.repo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e2e8f0;
+}
+
+/* Scenario Selection Styling */
+.scenario-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.scenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.scenario-card {
+  background-color: #1e293b;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #334155;
+}
+
+.scenario-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  border-color: #4b5563;
+}
+
+.scenario-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #334155;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.scenario-description {
+  color: #94a3b8;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+/* Storyboard View Styling */
+.storyboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.storyboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+
+.storyboard-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.flow-diagram {
+  width: 250px;
+  padding: 20px;
+  background-color: #1e293b;
+  border-right: 1px solid #334155;
+  overflow-y: auto;
+}
+
+.panel-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.panel-card {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+}
+
+.panel-description {
+  color: #94a3b8;
+  margin: 15px 0;
+}
+
+.file-highlight {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #0f172a;
+  border-radius: 6px;
+  border-left: 4px solid #3b82f6;
+}
+
+.file-badge {
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.file-badge:hover {
+  background-color: #3b82f6 !important;
+}
+
+.code-snippet {
+  margin: 20px 0;
+}
+
+.code-snippet pre {
+  background-color: #0f172a;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #e2e8f0;
+}
+
+.panel-explanation {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.storyboard-controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: #1e293b;
+  border-top: 1px solid #334155;
+}
+
+/* File Explorer Styling */
+.file-explorer {
+  color: #e2e8f0;
+}
+
+.file-content {
+  background-color: #0f172a;
+  padding: 15px;
+  border-radius: 6px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* Tour Modal Styling */
+.tour-intro {
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.tour-intro ol {
+  padding-left: 20px;
+}
+
+/* Back Button Styling */
+.back-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .storyboard-content {
+    flex-direction: column;
+  }
+  
+  .flow-diagram {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #334155;
+    height: auto;
+    max-height: 250px;
+  }
+  
+  .scenarios-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Main container for the repository journey */
+.repo-journey-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #0a1929;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Repository title and info section */
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: #1e293b;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.repo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.repo-title-text {
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+.repo-controls {
+  display: flex;
+  gap: 10px;
+}
+
+/* Scenario selector */
+.scenario-selector {
+  margin-bottom: 24px;
+}
+
+.scenario-card {
+  padding: 20px;
+  margin-bottom: 16px;
+  background-color: #1e293b;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scenario-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+.scenario-card.active {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.scenario-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.scenario-description {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Storyboard panel display */
+.storyboard-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #1e293b;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.storyboard-header {
+  padding: 16px;
+  background-color: #0f172a;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.storyboard-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.storyboard-content {
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.panel {
+  margin-bottom: 32px;
+  animation: fadeIn 0.5s ease;
+}
+
+.panel-header {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.panel-step {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.panel-description {
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.panel-files {
+  background-color: #0f172a;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 16px;
+}
+
+.file-item {
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.file-item:hover {
+  background-color: #1e293b;
+}
+
+.file-name {
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: #3b82f6;
+}
+
+.file-description {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+/* Navigation controls */
+.navigation-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #334155;
+}
+
+/* File drawer */
+.file-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  max-width: 600px;
+  height: 100vh;
+  background-color: #0f172a;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.file-drawer.open {
+  transform: translateX(0);
+}
+
+.file-drawer-header {
+  padding: 16px;
+  background-color: #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+}
+
+.file-drawer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-drawer-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.file-code {
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  background-color: #1e293b;
+  border-radius: 6px;
+  padding: 16px;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+.file-summary {
+  background-color: #1e293b;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.file-summary-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.file-summary-content {
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* Tour introduction modal */
+.tour-intro-modal {
+  background-color: #1e293b;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  padding: 24px;
+  animation: fadeIn 0.3s ease;
+}
+
+.tour-intro-header {
+  margin-bottom: 16px;
+}
+
+.tour-intro-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.tour-intro-description {
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.tour-intro-steps {
+  margin: 20px 0;
+}
+
+.tour-step {
+  display: flex;
+  margin-bottom: 16px;
+  padding-left: 10px;
+}
+
+.tour-step-number {
+  background-color: #3b82f6;
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.tour-step-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.tour-step-title {
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.tour-step-description {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.tour-intro-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .repo-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .repo-controls {
+    margin-top: 12px;
+  }
+  
+  .file-drawer {
+    width: 100%;
+    max-width: none;
+  }
+}
